@@ -1,0 +1,801 @@
+/* Space Mono Font.*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/* Poppins Font. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap');
+
+/* Color Variables */
+:root {
+    --light-beige-color: #E0E2DB;
+    --dark-beige-color: #D2D4C8;
+    --off-black-color: #2E3532;
+    --red-color: #8B2635;
+    --white-color: #FFFFFF;
+}
+
+/* Reset margin & padding and ensuring border-box box model */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+li {
+    list-style: none;
+}
+
+/* Vertical Margin Classes */
+.mgv1 {
+    margin: 1em 0;
+}
+
+.mgv2 {
+    margin: 2em 0;
+}
+
+.mgv3 {
+    margin: 3em 0;
+}
+
+.mgv4 {
+    margin: 4em 0;
+}
+
+/* Set default font */
+body {
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+
+    background-color: var(--light-beige-color);
+    color: var(--off-black-color);
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    height: 50px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+}
+
+/* Header image */
+.bullsEye {
+    position: absolute;
+    left: -50px;
+
+    width: 100px;
+    height: 100px;
+}
+
+.headerContainer {
+    background-color: var(--off-black-color);
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 3em;
+}
+
+/* Font Logo TMP. */
+.headerLogo {
+    color: var(--light-beige-color);
+    
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLinks ul {
+    display: none;
+}
+
+.navLinks a {
+    padding: 1em;
+    
+    text-align: center;
+
+    transition: 300ms ease;
+}
+
+.navLinks a:hover {
+    font-weight: bold;
+}
+
+.hamburgerButton {
+    width: 30px;
+    height: 20px;
+
+    cursor: pointer;
+}
+
+/* Main content grid */
+.contentContainer {
+    display: grid;
+    grid-template-columns: 36px repeat(4, 1fr) 36px;
+    column-gap: 10px;
+
+    position: relative;
+}
+
+/* Hero Section */
+.hero {
+    grid-column: 2 / 6;
+    background-color: var(--light-beige-color);
+}
+
+.heroContainer {
+    margin: 5em 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.heroHeading {
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.heroHeading span {
+    color: var(--red-color);
+    font-style: normal;
+}
+
+.heroDesc {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.ctaButton {
+    font-family: "Space Mono", monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    background-color: var(--red-color);
+
+    padding: 0.25em 0.5em;
+    
+    border-radius: 25px;
+
+    transition: 300ms ease;
+}
+
+.ctaButton:hover {
+    transform: scale(1.05);
+    
+    background-color: var(--off-black-color);
+}
+
+.socialBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 3em;
+
+    position: relative;
+}
+
+.socialBar img {
+    cursor: pointer;
+
+    margin: 0 .5em;
+
+    transition: 300ms ease;
+}
+
+.socialBar img:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* Hero 2 */
+.hero2 {
+    background-color: var(--red-color);
+
+    grid-column: 1 / 7;
+
+    height: 750px;
+
+    position: relative;
+}
+
+.hero2Text {
+    padding: 7em 3em;
+
+    z-index: 10;
+}
+
+.hero2text1 {
+    color: var(--light-beige-color);
+    font-family: "Space Mono", sans-serif;
+    font-weight: bold;
+}
+
+.hero2text2 {
+    color: var(--white-color);
+    font-weight: bold;
+    font-style: italic;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* Red Hero sailing boat SVG */
+.hero2Background {
+    transform: scaleX(-1);
+
+    position: absolute;
+    top: 10em;
+    right: 0;
+
+    width: 100%;
+    height: 80%;
+
+    opacity: 0.5;
+}
+
+/* Right side half circle, also visible on mobile */
+.designElement1 {
+    position: absolute;
+    right: 0;
+    top: -100px;
+}
+
+/* Left side large half circle, not visible on mobile */
+.designElement2 {
+    position: absolute;
+    left: 0;
+    bottom: -200px;
+    width: 200px;
+    height: 400px;
+
+    display: none;
+    
+    z-index: 10;
+}
+
+/* Services (Cards) Section */
+.services {
+    grid-column: 2 / 6;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--off-black-color);
+    color: var(--white-color);
+
+    padding: 3em;
+    margin: 3em 0;
+
+    border-radius: 3em;
+
+    text-align: center;
+}
+
+.servicesHeading {
+    color: var(--light-beige-color);
+    font-size: 32px;
+}
+
+.cardContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 350px;
+
+    padding: 1em;
+
+    margin-top: 1em;
+
+    transition: 600ms ease;
+}
+
+.card:hover {
+    transform: scale(1.25);
+}
+
+.cardBackground {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+
+    background-color: var(--off-black-color);
+    
+    border-radius: 3em;
+
+    transition: 600ms ease;
+}
+
+.cardBackground:hover {
+    opacity: 0.25;
+}
+
+.cardIcon {
+    width: 50%;
+
+    filter: invert(1);
+    margin-bottom: 1em;
+}
+
+.cardText {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    color: var(--white-color);
+
+    font-family: "Space Mono", monospace;
+    line-height: 1;
+    font-size: 12px;
+
+    padding: 5em;
+
+    text-align: center;
+}
+
+/* Featured Project Section */
+.featured {
+    grid-column: 1 / 7;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--dark-beige-color);
+
+    padding: 2em;
+    margin: 3em;
+
+    border-radius: 3em;
+}
+
+.featuredImage {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 1em;
+
+    border-radius: 4em;
+
+    transition: 600ms ease;
+}
+
+.featuredImage:hover {
+    transform: scale(1.1);
+}
+
+.imageDetails {
+    text-align: center;
+}
+
+.spotlightText {
+    width: 100%;
+    line-height: 1.4em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-right: 2em;
+}
+
+.spotlightSubTitle {
+    color: var(--red-color);
+
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.projectName {
+    font-size: 22px;
+}
+
+.projectDescriptionQuote {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.projectDescriptionBody {
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.projectDescriptionEnd {
+    font-size: 14px;
+}
+
+/* Recent Projects Section */
+.recentProjects {
+    grid-column: 1 / 15;
+
+    padding: 3em 9em;
+
+    margin: 3em 6em 3em 0;
+
+    background: var(--dark-beige-color);
+
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+
+    display: none;
+}
+
+.recentProjects h2 {
+    font-size: 32px;
+
+    color: var(--off-black-color);
+
+    text-align: right;
+
+    margin: 0 3em 1em 0;
+}
+
+.projectContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 3em;
+}
+
+.projectCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 3em;
+
+    padding: 3em;
+
+    background-color: var(--light-beige-color);
+
+    border-radius: 6em;
+}
+
+.projectCard img {
+    max-height: 450px;
+    max-width: 300px;
+    width: 100%;
+
+    border-radius: 3em;
+}
+
+/* Call To Action Section */
+.callToAction {
+    grid-column: 1 / 7;
+
+    position: relative;
+    background-color: var(--red-color);
+
+    padding: 16em 2em;
+
+    text-align: center;
+}
+
+.featuredSectionDesign3 {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    height: 200px;
+    width: 100px;
+}
+
+.ctaHeading {
+    color: var(--white-color);
+    font-size: 32px;
+    margin-bottom: 2em;
+}
+
+#hireMeButton {
+    background-color: var(--off-black-color);
+
+    font-size: 22px;
+
+    transition: 600ms ease;
+}
+
+#hireMeButton:hover {
+    font-size: 28px;
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--off-black-color);
+    color: var(--light-beige-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 3em;
+
+    gap: 3em;
+}
+
+.footerLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerLogo {
+    display: none;
+
+    height: 100px;
+    width: 100px;
+}
+
+.footerNavLinks {
+    display: none;
+}
+
+#footerSocials {
+    filter: invert(1);
+    left: 0;
+    margin: 0;
+}
+
+.footerNavLinks ul {
+    flex-direction: column;
+}
+
+.copyright {
+    text-align: center;
+}
+
+
+
+/* Media Queries */
+@media only screen and (max-width: 350px) {
+    .cardText {
+        font-size: 6px;
+    }
+
+    .services {
+        padding: 1em;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .cardText {
+        font-size: 9px;
+    }
+}
+
+
+
+@media only screen and (min-width: 960px) {
+    .contentContainer {
+        grid-template-columns: 140px repeat(12, 1fr) 140px;
+        column-gap: 16px;
+    }
+
+    /* Header */
+    header {
+        top: 25px;
+
+        z-index: 10;
+    }
+
+    .headerContainer {
+        margin-left: 100px;
+        padding: 0 140px 0 50px;
+    }
+
+    .bullsEye {
+        left: 50px;
+    }
+
+    .navLinks ul {
+        display: flex;
+    }
+
+    .navLinks ul li {
+        padding: 0.5em;
+    }
+
+    .hamburgerButton {
+        display: none;
+    }
+
+    /* Hero Main */
+    .hero {
+        grid-column: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 70%;
+        height: 650px;
+
+        padding: 5em 5em 0 5em;
+
+        border-bottom-right-radius: 12.5em;
+        
+        z-index: 5;
+    }
+
+    .heroContainer {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .heroHeading {
+        font-size: 48px;
+    }
+
+    .heroDesc {
+        font-size: 18px;
+        width: 75%;
+    }
+
+    .socialBar {
+        left: 40px;
+    }
+
+    /* Red Hero Secondary */
+    .hero2 {
+        grid-column: 1 / 15;
+    }
+
+    .hero2Text {
+        position: absolute;
+        right: 140px;
+        bottom: 4em;
+
+        padding: 0;
+
+        text-align: right;
+
+        font-size: 9px;
+    }
+
+    .hero2Background {
+        top: unset;
+        bottom: 10em;
+        width: 30%;
+    }
+
+    .designElement1 {
+        top: unset;
+        bottom: -100px;
+    }
+
+    .designElement2 {
+        display: block;
+    }
+
+    /* Services Section */
+    .services {
+        grid-column: 1 / 15;
+        margin: 2em 6em;
+    }
+
+    .cardContainer {
+        flex-direction: row;
+
+        padding: 2em;
+    }
+
+    /* Featured Project Section */
+    .featured {
+        grid-column: 2 / 14;
+        flex-direction: row-reverse;
+    }
+
+    .spotlightText {
+        margin-right: 10em;
+        margin-left: 3em;
+    }
+
+    .callToAction {
+        grid-column: 1 / 15;
+    }
+
+    .recentProjects {
+        display: block;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 3em 12em;
+    }
+
+    .footerLogo {
+        display: block;
+    }
+
+    .footerNavLinks {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 1500px) {
+    .designElement2 {
+        display: none;
+    }
+
+    .spotlightText {
+        margin-right: 2em;
+    }
+
+    footer {
+        padding: 3em;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .featuredImage {
+        max-width: 900px;
+    }
+
+    .ctaHeading {
+        font-size: 48px;
+    }
+}
